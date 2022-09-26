@@ -1,4 +1,90 @@
-.usado{
+
+img {
+    height: 500px;
+    width: 500px;
+}
+.ilustracoes{
+    display: flex;
+    margin-bottom: 40px;
+}
+.botao-e-palavra button{
+    background-color: lightgreen;
+    height: 40px;
+    width: 160px;
+    border-radius: 10px;
+    border-color: black;
+}
+.botao-e-palavra{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 50px;
+    margin-left: 50px;
+}
+.botao-e-palavra span {
+    font-weight: bolder;
+    font-size:xx-large;
+    letter-spacing: 5px;
+}
+body {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+}
+.letras{
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: center;
+    width: 650px;
+
+}
+.letras button{
+    font-size: large;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 40px;
+    background-color:rgb(95, 239, 167);
+    border-radius: 5px;
+    color: black;
+    border-color: dimgray;
+}
+.chute {display: flex;
+justify-content: center;
+align-items: center;
+box-sizing: border-box;}
+.chute span{
+    
+    font-size: 20px;
+}
+.chute input{
+    height: 30px;
+    border-radius: 5px;
+}
+.chute button{
+    background-color:rgb(95, 239, 167);
+    height: 35px;
+    border-radius: 5px;
+    color: black;
+    border-color: dimgray;
+
+}
+.chute .usado{
     color: whitesmoke;
     background-color: black;
+    border-color: dimgray;
+}
+.letras .usado{
+    color: whitesmoke;
+    background-color: black;
+    border-color: dimgray;
+
+}
+.perdeu span{
+    color:red
+}
+.venceu span{
+    color:green
 }

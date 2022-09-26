@@ -55,6 +55,7 @@ export default function App() {
         if(missed===true){
             console.log("ERROU");
             nErrosI++;
+            if(nErrosI ==6){setDisplayArray([...chosenArray])}
             setNErros(nErrosI);
             console.log("NUMERO DE ERROS:",nErrosI)
             setImgAtual(arrayImgs[nErrosI])
@@ -62,13 +63,15 @@ export default function App() {
     }
     function chutarPalavra(){
         if(arraysEqual(chute.split(""),chosenArray)){
-            alert("VOCE VENCEU");
+            
             setVenceu(true);
+            setDisplayArray([...chosenArray])
         }
         else{
             setNErros(6);
             setImgAtual(forca6);
-            alert("VOCE PERDEU")
+            setDisplayArray([...chosenArray])
+            
         }
     }
     function arraysEqual(a, b) {
@@ -80,18 +83,27 @@ export default function App() {
         }
         return true;
       }
+    function checkVitoria(){
+        if(nErros==6){
+            
+            return "perdeu"
+        }
+        else if(arraysEqual(displayArray,chosenArray)){
+            return "venceu"
+        }
+    }
       function disabled(){}
     return (
         <>
-            <div className="Ilustracoes">
-                <img data-identifier="game-image" src={imgAtual}></img>
-                <div className="botao-e-palavra">
+            <div className="ilustracoes">
+                <img data-identifier="game-image" className="img" src={imgAtual}></img>
+                <div className={"botao-e-palavra "+checkVitoria()}>
                     <button data-identifier="choose-word" onClick={()=>chooseWord()}>Escolher Palavra</button>
                     <span data-identifier="word" className="palavra">{displayArray}</span>
                 </div>
 
             </div>
-            <div className="letras">
+            <div className="letras " >
                 {alfabeto.map((letra, index) => <button data-identifier="letter" key={index} className={letrasChutadas.includes(letra)?"usado":""} onClick={() =>{letrasChutadas.includes(letra)?disabled():checkLetter(letra)}}>{letra}</button>)}
             </div>
             <div className="chute">
